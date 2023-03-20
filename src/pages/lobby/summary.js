@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 import cookie from 'cookie';
 import jwt from 'jsonwebtoken';
 import { CaretLeftOutlined, CloseCircleFilled } from '@ant-design/icons';
-import PricePad from '@/components/Numpad/PricePad';
 
 export default function Summary(user) {
     const { data: session } = useSession()

@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 import cookie from 'cookie';
 import jwt from 'jsonwebtoken';
 import { CaretLeftOutlined, CloseCircleFilled } from '@ant-design/icons';
-import PricePad from '@/components/Numpad/PricePad';
 
 export default function Payment(user) {
     const { data: session } = useSession()
@@ -87,10 +86,12 @@ export default function Payment(user) {
                                     <div className='sl-payment__bank-value-label'>นาย ณัฐดณิศร์ ศิริพิทยกุล</div>
                                 </div>
                             </div>
-                            <div className='sl-payment__notics mb-4'>กรุณาใช้ชื่อบัญชีเดียวกันกับชื่อจริงในการโอนเงิน</div>
-                            <div className='sl-payment__bank-block mb-4'>
+                            <div className='sl-payment__notics mb-2'>กรุณาใช้ชื่อบัญชีเดียวกันกับชื่อจริงในการโอนเงิน</div>
+                            <div className='sl-payment__bank-block-new mb-4'>
                                 <input type="file" id="myFile" name="filename" />
-                                <Button>ส่งสลิป</Button>
+                                <div className='sl-payment__bank-button'>
+                                    <Button>ส่งสลิป</Button>
+                                </div>
                             </div>
                         </div>
 

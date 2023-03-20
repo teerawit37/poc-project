@@ -234,15 +234,36 @@
     }
     @include element('bank-label') {
         margin-left: 4px;
+        font-size: 16px;
         color: $--color-greyscale-600;
     }
     @include element('bank-block'){
         display: flex;
         justify-content: space-between;
     }
+    @include element('bank-button'){
+        display: flex;
+        margin-top: 16px;
+        justify-content: center;
+        @include media-breakpoint-up('md'){
+           margin-top: 0;
+        }
+    }
+    @include element('bank-block-new'){
+        display: flex;
+        padding: 16px;
+        flex-direction: column;
+        width: 100%;
+
+        @include media-breakpoint-up('md'){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
 
     @include element('bank-value-label') {
         margin-left: 4px;
+        font-size: 16px;
         color: black;
     }
 
