@@ -1,0 +1,42 @@
+@include block('lotto-lobby') {
+    display: block;
+    margin-top: 56px;
+    min-height: 500px;
+    background-color: $--color-violet-100;
+
+    @include media-breakpoint-up('lg') {
+        margin-top: 72px;
+    }
+
+    @include element('banner') {
+        background-color: $--color-violet-500;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        @include media-breakpoint-up('lg') {
+            height: 112px;
+        }
+    }
+    @include element('tab'){
+        // max-width: 700px; 
+        width: 100%;
+    }
+    @include element('tab-container'){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ant-tabs-nav-wrap {
+        justify-content: center;
+    }
+    .ant-tabs-tab-btn {
+        font-family: 'noto-sans';
+        font-size: 16px;
+    }
+    .ant-tabs-tab-active {
+        color: $--color-violet-300 !important;
+    }
+}

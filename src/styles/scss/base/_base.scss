@@ -1,0 +1,206 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/utilities';
+
+a,
+button {
+  outline: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  color: $--color-black;
+  font-size: $--font-size-base-mobile;
+  scroll-behavior: auto !important;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-base-desktop;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'noto-sans';
+  font-size: $--font-size-base;
+  color: $--color-pearly-white-600;
+  background-color: $--color-white;
+  overflow-x: hidden; // NOTE : for landing animation
+  &.lock-screen {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: $--color-blue-200;
+  text-decoration: none;
+  font-size: rem(20px);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+p {
+  line-height: 1.9;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  // background-color: $--color-orange-100;
+  @include media-breakpoint-only(sm) {
+    padding: 0 16px;
+  }
+}
+
+%tag-h {
+  margin: 0;
+  font-weight: bolder;
+  line-height: 1.35;
+  color: $--color-black;
+}
+h1 {
+  @extend %tag-h;
+  font-size: $--font-size-h1-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-h1-desktop;
+  }
+}
+h2 {
+  @extend %tag-h;
+  font-size: $--font-size-h2-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-h2-desktop;
+  }
+}
+h3 {
+  @extend %tag-h;
+  font-size: $--font-size-h3-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-h3-desktop;
+  }
+}
+h4 {
+  @extend %tag-h;
+  font-size: $--font-size-h4-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-h4-desktop;
+  }
+}
+h5 {
+  @extend %tag-h;
+  font-size: $--font-size-h5-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-h5-desktop;
+  }
+}
+
+::placeholder {
+  color: $--color-greyscale-300;
+}
+
+/**
+ * Spacing gutter
+ */
+@each $prop, $abbrev in (margin: m, padding: p) {
+  .#{$abbrev}-g {
+    #{$prop}: $grid-gutter-width;
+  }
+  .#{$abbrev}t-g,
+  .#{$abbrev}y-g {
+    #{$prop}-top: $grid-gutter-width;
+  }
+  .#{$abbrev}r-g,
+  .#{$abbrev}x-g {
+    #{$prop}-right: $grid-gutter-width;
+  }
+  .#{$abbrev}b-g,
+  .#{$abbrev}y-g {
+    #{$prop}-bottom: $grid-gutter-width;
+  }
+  .#{$abbrev}l-g,
+  .#{$abbrev}x-g {
+    #{$prop}-left: $grid-gutter-width;
+  }
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $gutter in $--grid-gutters {
+      .tk-gutter#{$infix}-#{$gutter} {
+        padding-right: #{$gutter}px;
+        padding-left: #{$gutter}px;
+        .row {
+          margin-left: #{$gutter * -1}px;
+          margin-right: #{$gutter * -1}px;
+          [class*='col-'] {
+            padding-left: #{$gutter}px;
+            padding-right: #{$gutter}px;
+          }
+        }
+        @each $selector in ('&', '& .row', "& .row [class*='col-']") {
+          @each $prop, $abbrev in (margin: m, padding: p) {
+            #{$selector}.#{$abbrev}-g {
+              #{$prop}: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}t-g,
+            #{$selector}.#{$abbrev}y-g {
+              #{$prop}-top: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}r-g,
+            #{$selector}.#{$abbrev}x-g {
+              #{$prop}-right: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}b-g,
+            #{$selector}.#{$abbrev}y-g {
+              #{$prop}-bottom: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}l-g,
+            #{$selector}.#{$abbrev}x-g {
+              #{$prop}-left: #{$gutter}px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Spacing fix
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $--spacers-fix {
+        .#{$abbrev}#{$infix}-#{$size}-fix {
+          #{$prop}: $length;
+        }
+        .#{$abbrev}t#{$infix}-#{$size}-fix,
+        .#{$abbrev}y#{$infix}-#{$size}-fix {
+          #{$prop}-top: $length;
+        }
+        .#{$abbrev}r#{$infix}-#{$size}-fix,
+        .#{$abbrev}x#{$infix}-#{$size}-fix {
+          #{$prop}-right: $length;
+        }
+        .#{$abbrev}b#{$infix}-#{$size}-fix,
+        .#{$abbrev}y#{$infix}-#{$size}-fix {
+          #{$prop}-bottom: $length;
+        }
+        .#{$abbrev}l#{$infix}-#{$size}-fix,
+        .#{$abbrev}x#{$infix}-#{$size}-fix {
+          #{$prop}-left: $length;
+        }
+      }
+    }
+  }
+}

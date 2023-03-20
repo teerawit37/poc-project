@@ -1,0 +1,277 @@
+@include block('payment'){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+    background-color: $--color-violet-100;
+
+    @include media-breakpoint-up('lg') {
+        margin-top: 72px;
+    }
+    @include element('name-title'){
+        display: flex;
+        justify-content: flex-end;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    @include element('board') {
+        width: 100%;
+        height: 100%;
+
+
+        @include media-breakpoint-up('md') {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            box-shadow: $--box-shadow-2;
+            overflow: hidden;
+        }
+    }
+
+    @include element('field') {
+        display: block;
+        max-width: 600px;
+        width: 100%;
+        min-height: 500px;
+        background-color: $--color-violet-100;
+
+    }
+
+    @include element('header') {
+        height: 100%;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        color: white;
+        background-color: $--color-violet-500;
+        justify-content: space-between;
+
+        @include media-breakpoint-up('lg') {
+            padding: 16px;
+        }
+    }
+
+    @include element('header-label') {
+        font-size: 16px;
+        font-weight: 600;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+
+        @include media-breakpoint-up('md') {
+            font-size: 20px;
+        }
+    }
+
+    @include element('body') {
+        display: block;
+    }
+
+    @include element('result') {
+        // background-color: white;
+        min-height: 200px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // padding: 16px 8px;
+        align-items: center;
+        overflow: scroll;
+    }
+
+    @include element('item') {
+        font-size: 12px;
+    }
+
+    @include element('label-container') {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        padding: 16px 8px;
+        align-items: center;
+        width: 100%;
+    }
+
+    @include element('label') {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    @include element('label-fit') {
+        font-size: 14px;
+        text-align: end;
+        @include media-breakpoint-up('md'){
+            font-size: 16px;
+        }
+    }
+
+    @include element('label-list') {
+        font-size: 14px;
+        text-align: end;
+        @include modifier('hl') {
+            color: $--color-line;
+        }
+        @include modifier('between') {
+            display: flex;
+            justify-content: space-between;    
+        }
+        @include modifier('bold') {
+            font-weight: 500;
+        }
+        @include modifier('non-hl') {
+            margin-left: 2px;
+            color: $--color-greyscale-200;
+        }
+        @include media-breakpoint-up('md'){
+            font-size: 16px;
+        }
+    }
+
+    @include element('container') {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        background-color: white;
+        box-shadow: $--box-shadow-1;
+        padding: 16px 8px;
+        // align-items: center;
+        width: 100%;
+        @include media-breakpoint-up('md'){
+            padding: 16px;
+        }
+    }
+
+    @include element('label') {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    @include element('pay') {
+        padding: 16px 24px;
+        width: 100%;
+    }
+
+    @include element('price-container') {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: $--box-shadow-2;
+    }
+
+    @include element('price-header') {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        font-size: 18px;
+        color: $--color-violet-600;
+        align-items: center;
+        // border-bottom: 1px solid $--color-greyscale-200;
+    }
+
+    @include element('price-label') {
+        margin-left: 4px;
+        color: $--color-violet-200;
+    }
+
+    @include element('price-footer') {
+        display: flex;
+        background-color: $--color-orange-200;
+        justify-content: space-between;
+        padding: 8px;
+        font-size: 18px;
+        color: $--color-violet-600;
+        align-items: center;
+    }
+
+    @include element('notics-container') {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @include element('notics') {
+        font-size: 16px;
+        color: $--color-greyscale-300;
+    }
+
+    @include element('items') {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        padding: 8px 0;
+        color: $--color-greyscale-500;
+        font-weight: 600;
+        border-bottom: 1px solid $--color-greyscale-200;
+    }
+
+    @include element('btn-container') {
+        border-top: 1px solid $--color-greyscale-200;
+        padding: 16px 8px 8px 8px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        max-width: 400px;
+        width: 100%;
+    }
+    @include element('list') {
+        display: flex;
+        padding: 4px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    @include element('bank-container') {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 16px 24px;
+    }
+    @include element('bank-label') {
+        margin-left: 4px;
+        color: $--color-greyscale-600;
+    }
+    @include element('bank-block'){
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @include element('bank-value-label') {
+        margin-left: 4px;
+        color: black;
+    }
+
+    .ant-tabs-tab {
+        background-color: $--color-violet-200 !important;
+        border: none !important;
+        color: $--color-greyscale-500 !important;
+    }
+
+    .ant-tabs-tab-active {
+        background-color: $--color-violet-100 !important;
+        color: $--color-violet-600 !important;
+    }
+
+    .ant-tabs-nav-wrap {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ant-tabs-tab-btn {
+        font-family: 'noto-sans';
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .ant-tabs-tab {
+        border: 2px solid $--color-violet-300;
+        border-bottom: none;
+        background-color: $--color-violet-100;
+    }
+}

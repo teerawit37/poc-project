@@ -1,0 +1,135 @@
+@include block('button') {
+    padding: 8px 24px;
+    // border-radius: $--border-radius-1;
+    border: none;
+    background-color: $--color-line;
+    color: $--color-pearly-white-100;
+    box-shadow: $--box-shadow-3;
+    font-size: 16px;
+    font-family: 'noto-sans';
+
+    &:hover {
+        color: $--color-line;
+        background-color: $--color-pearly-white-100;
+    }
+
+    @include modifier('primary') {
+        background-color: $--color-line;
+        color: $--color-pearly-white-100;
+        font-size: 16px;
+        font-family: 'noto-sans';
+
+        &:hover {
+            color: $--color-line;
+            background-color: $--color-pearly-white-100;
+        }
+    }
+
+    @include modifier('secondary') {
+        font-size: 16px;
+        font-family: 'noto-sans';
+        width: 100%;
+        background-color: $--color-violet-500;
+
+        &:hover {
+            color: $--color-violet-500;
+            background-color: $--color-pearly-white-100;
+        }
+    }
+
+    @include modifier('long') {
+        font-size: 16px;
+        font-family: 'noto-sans';
+        width: 100%;
+        background-color: $--color-orange-400;
+
+        &:hover {
+            color: $--color-orange-400;
+            background-color: $--color-pearly-white-100;
+        }
+    }
+
+    @include modifier('facebook') {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-family: 'noto-sans';
+        width: 100%;
+        background-color: $--color-facebook;
+        border: 2px solid $--color-facebook;
+
+        &:hover {
+            color: $--color-facebook;
+            background-color: $--color-pearly-white-100;
+            border: 2px solid $--color-facebook;
+        }
+    }
+
+    @include modifier('line') {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-family: 'noto-sans';
+        background-color: $--color-line;
+        border: 2px solid $--color-line;
+
+        &:hover {
+            color: $--color-line;
+            background-color: $--color-pearly-white-100;
+        }
+    }
+}
+
+@include block('login-button') {
+    padding: 8px 24px;
+    border-radius: $--border-radius-1;
+    border: none;
+    background-color: $--color-line;
+    color: $--color-pearly-white-100;
+    box-shadow: $--box-shadow-3;
+
+    &:hover {
+        color: $--color-line;
+        background-color: $--color-pearly-white-100;
+    }
+}
+
+@include block('logout-button') {
+    width: 100%;
+    margin-top: 0px;
+
+    @include element('profile-image') {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @include media-breakpoint-up('lg') {
+            width: 52px;
+            height: 52px;
+            border-radius: 26px;
+        }
+    }
+
+    @include element('btn-label') {
+        font-size: 22px;
+        color: $--color-greyscale-500;
+        font-family: 'noto-sans';
+    }
+
+    // @include media-breakpoint-up('lg') {
+    //     margin-top: 10px;
+    // }
+
+
+}
+
+.btn-label {
+    font-size: 18px;
+    color: $--color-greyscale-500;
+    font-family: 'noto-sans';
+
+    &:hover {
+        color: $--color-violet-500;
+    }
+}

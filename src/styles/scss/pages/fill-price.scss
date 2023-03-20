@@ -1,0 +1,139 @@
+@include block('fill-price') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+    background-color: $--color-violet-100;
+    @include media-breakpoint-up('lg') {
+        margin-top: 72px;
+    }
+
+    @include element('board') {
+        width: 100%;
+        height: 100%;
+
+
+        @include media-breakpoint-up('md'){
+            margin-top: 16px;
+            margin-bottom: 16px;
+            box-shadow: $--box-shadow-2;
+            overflow: hidden;
+        }
+    }
+
+    @include element('field') {
+        display: block;
+        max-width: 600px;
+        width: 100%;
+        min-height: 500px;
+        background-color: $--color-violet-100;
+
+    }
+
+    @include element('header') {
+        height: 100%;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        color: white;
+        background-color: $--color-violet-500;
+        justify-content: space-between;
+
+        @include media-breakpoint-up('lg') {
+            padding: 16px;
+        }
+    }
+
+    @include element('header-label') {
+        font-size: 16px;
+        font-weight: 600;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+
+        @include media-breakpoint-up('md') {
+            font-size: 20px;
+        }
+    }
+
+    @include element('body') {
+        display: block;
+    }
+
+    @include element('result') {
+        background-color: white;
+        min-height: 200px;
+        height: 100%;    
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        overflow: scroll;
+    }
+
+    @include element('item'){
+        font-size: 12px;
+    }
+
+    @include element('notics-container') {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @include element('notics') {
+        font-size: 16px;
+        color: $--color-greyscale-300;
+    }
+
+    @include element('items'){
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        padding: 8px 0;
+        color: $--color-greyscale-500;
+        font-weight: 600;
+        border-bottom: 1px solid $--color-greyscale-200;
+    }
+
+    @include element('btn-container'){
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .ant-tabs-tab {
+        background-color: $--color-violet-200 !important;
+        border: none !important;
+        color: $--color-greyscale-500 !important;
+    }
+
+    .ant-tabs-tab-active {
+        background-color: $--color-violet-100 !important;
+        color: $--color-violet-600 !important;
+    }
+
+    .ant-tabs-nav-wrap {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ant-tabs-tab-btn {
+        font-family: 'noto-sans';
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .ant-tabs-tab {
+        border: 2px solid $--color-violet-300;
+        border-bottom: none;
+        background-color: $--color-violet-100;
+    }
+}

@@ -1,0 +1,227 @@
+@import '~bootstrap/scss/variables';
+/**
+ * BEM
+ */
+$--bem-namespace: 'sl';
+$--bem-element-separator: '__';
+$--bem-modifier-separator: '--';
+$--bem-state-prefix: 'is-';
+
+$--color-crayola-blue-100: #DDE0FD;
+$--color-crayola-blue-200: #7B88F9;
+$--color-crayola-blue-300: #192FF5;
+$--color-crayola-blue-400: #091DD2;
+$--color-crayola-blue-500: #051070;
+$--color-crayola-blue-600: #03093F;
+
+$--color-aquamarine-100: #E2FDF6;
+$--color-aquamarine-200: #B3F9E6;
+$--color-aquamarine-300: #83F6D7;
+$--color-aquamarine-400: #24EFB8;
+$--color-aquamarine-500: #0CA279;
+$--color-aquamarine-600: #087256;
+
+$--color-pearly-white-100: #FFFFFF;
+$--color-pearly-white-200: #EFEFEF;
+$--color-pearly-white-300: #C6C6C6;
+$--color-pearly-white-400: #7A7A7A;
+$--color-pearly-white-500: #474747;
+$--color-pearly-white-600: #000000;
+
+$--color-violet-100: #EFE6FD;
+$--color-violet-200: #D0B3FA;
+$--color-violet-300: #914DF3;
+$--color-violet-400: #6200EE;
+$--color-violet-500: #4E00BE;
+$--color-violet-600: #310077;
+
+$--color-orange-100: #FFF4E6;
+$--color-orange-200: #FFDEB3;
+$--color-orange-300: #FFB24D;
+$--color-orange-400: #FF9100;
+$--color-orange-500: #CC7400;
+$--color-orange-600: #804900;
+
+$--color-greyscale-100: #FCFCFC;
+$--color-greyscale-200: #D9D9D9;
+$--color-greyscale-300: #AAAAAB;
+$--color-greyscale-400: #7F7F82;
+$--color-greyscale-500: #555558;
+$--color-greyscale-600: #2A2A2E;
+
+$--color-yellow-100: #FEF6E3;
+$--color-yellow-200: #FFC601;
+$--color-yellow-300: #EE910A;
+$--color-yellow-400: #DE5A12;
+
+$--color-sea-blue: #1EB1BA;
+
+
+
+$--color-lightblue-100: #E6F7FC;
+$--color-lightblue-200: #5BC8EC;
+
+$--color-line: #00B900;
+$--color-facebook: #4267B2;
+
+$--color-blue-100: #DAEAFD;
+$--color-blue-200: #0573F3;
+
+$--color-white: $--color-pearly-white-100;
+$--color-black: $--color-pearly-white-600;
+
+$--color-red: #eb4a4c;
+
+$--color-transparent: transparent;
+
+$--color-red-100: #F7E1E2;
+$--color-red-200: #eb4a4c;
+
+$--color-green-100: #E2EDE6;
+$--color-green-200: #408558;
+
+$--color-primary-1: $--color-sea-blue;
+$--color-primary-2: $--color-yellow-200;
+$--color-primary-3: $--color-yellow-300;
+$--color-success: $--color-green-200; // success color
+$--color-warning: $--color-yellow-400; // warning color
+$--color-danger: $--color-yellow-400; // danger color
+
+/**
+ * Box Shadows
+ */
+$--box-shadow-1: 0 4px 12px 0 rgba(1, 27, 42, 0.14);
+$--box-shadow-2: 0 2px 10px 0 rgba(1, 27, 42, 0.12);
+$--box-shadow-3: 0 2px 8px 0 rgba(1, 27, 42, 0.1);
+$--box-shadow-4: 0 1px 6px 0 rgba(1, 27, 42, 0.1);
+
+/**
+ * Text Shadows
+ */
+$--text-shadow-1: 0 4px 12px rgba(1, 27, 42, 0.14);
+$--text-shadow-2: 0 2px 10px rgba(1, 27, 42, 0.12);
+$--text-shadow-3: 0 2px 8px rgba(1, 27, 42, 0.1);
+$--text-shadow-4: 0 1px 6px rgba(1, 27, 42, 0.1);
+
+/**
+ * Font Sizes
+ */
+$--font-size-base: 24px;
+$--font-size-base-desktop: 24px;
+$--font-size-base-mobile: $--font-size-base;
+
+$--font-size-h1: 2.488rem;
+$--font-size-h2: 2.048rem;
+$--font-size-h3: 1.728rem;
+$--font-size-h4: 1.44rem;
+$--font-size-h5: 1.2rem;
+
+$--font-size-h1-desktop: 5.653rem;
+$--font-size-h2-desktop: 3.998rem;
+$--font-size-h3-desktop: 1.827rem;
+$--font-size-h4-desktop: 1.999rem;
+$--font-size-h5-desktop: 1.414rem;
+
+$--font-size-h1-mobile: $--font-size-h1;
+$--font-size-h2-mobile: $--font-size-h2;
+$--font-size-h3-mobile: $--font-size-h3;
+$--font-size-h4-mobile: $--font-size-h4;
+$--font-size-h5-mobile: $--font-size-h5;
+
+$--font-size-b1: $--font-size-base;
+$--font-size-b2: $--font-size-b1 - 2px;
+$--font-size-b3: $--font-size-b2 - 2px;
+
+/**
+ * Border Radius
+ */
+$--border-radius-min: 4px;
+$--border-radius-1: 8px;
+$--border-radius-2: 16px;
+$--border-radius-3: 24px;
+$--border-radius-4: 32px;
+$--border-radius-5: 40px;
+$--border-radius-h: 50%;
+
+/**
+ * Spacing
+ */
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5
+  ),
+  5: (
+    $spacer * 2
+  ),
+  6: (
+    $spacer * 2.5
+  ),
+  7: (
+    $spacer * 3
+  ),
+  8: (
+    $spacer * 3.5
+  ),
+  9: (
+    $spacer * 4
+  ),
+  10: (
+    $spacer * 4.5
+  )
+);
+
+$--spacers-fix: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 40px,
+  7: 48px,
+  8: 56px,
+  9: 64px,
+  10: 72px
+);
+
+/**
+ * Grid Gutter
+ */
+$grid-gutter-width: 16px;
+$--grid-gutters: (0, 4, 8, 16);
+
+/**
+ * Breakpoints
+ */
+$grid-breakpoints: (
+  ss: 0,
+  xs: 320px,
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px
+);
+
+$container-max-widths: (
+  sm: 540px - $grid-gutter-width,
+  md: 768px - $grid-gutter-width,
+  lg: 992px,
+  xl: 1076px
+);
+
+/**
+ * z-index
+ */
+$z-index: (
+  base: 0,
+  header: 999,
+  overlay: 1000,
+);

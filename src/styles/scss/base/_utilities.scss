@@ -1,0 +1,192 @@
+/**
+ * Shadows
+ */
+.sl-box-shadow-1 {
+  box-shadow: $--box-shadow-1;
+}
+.sl-box-shadow-2 {
+  box-shadow: $--box-shadow-2;
+}
+.sl-box-shadow-3 {
+  box-shadow: $--box-shadow-3;
+}
+.sl-box-shadow-4 {
+  box-shadow: $--box-shadow-4;
+}
+
+/**
+ * Border
+ */
+.sl-border-radius-1 {
+  border-radius: $--border-radius-1;
+}
+.sl-border-radius-2 {
+  border-radius: $--border-radius-2;
+}
+.sl-border-radius-3 {
+  border-radius: $--border-radius-3;
+}
+.sl-border-radius-4 {
+  border-radius: $--border-radius-4;
+}
+.sl-border-radius-h {
+  border-radius: $--border-radius-h;
+}
+
+/**
+ * Text Colors
+ */
+.sl-text-primary,
+.sl-text-primary-1 {
+  color: $--color-primary-1;
+}
+.sl-text-primary-2 {
+  color: $--color-primary-2;
+}
+.sl-text-success {
+  color: $--color-success;
+}
+.sl-text-warning {
+  color: $--color-warning;
+}
+.sl-text-danger {
+  color: $--color-danger;
+}
+.sl-text-black {
+  color: $--color-black;
+}
+.sl-text-white {
+  color: $--color-white;
+}
+.sl-text-greyscale,
+.sl-text-greyscale-1 {
+  color: $--color-greyscale-100;
+}
+.sl-text-default,
+.sl-text-greyscale-2 {
+  color: $--color-greyscale-400;
+}
+.sl-text-none {
+  color: $--color-greyscale-600;
+}
+
+/**
+ * Background Colors
+ */
+.sl-bg-primary,
+.sl-bg-primary-1 {
+  background-color: $--color-primary-1;
+}
+.sl-bg-primary-2 {
+  background-color: $--color-primary-2;
+}
+.sl-bg-success {
+  background-color: $--color-success;
+}
+.sl-bg-warning {
+  background-color: $--color-warning;
+}
+.sl-bg-danger {
+  background-color: $--color-danger;
+}
+.sl-bg-black {
+  background-color: $--color-black;
+}
+.sl-bg-white {
+  background-color: $--color-white;
+}
+.sl-bg-greyscale,
+.sl-bg-greyscale-1 {
+  background-color: $--color-greyscale-100;
+}
+.sl-bg-greyscale-2 {
+  background-color: $--color-greyscale-200;
+}
+.sl-bg-greyscale-3 {
+  background-color: $--color-greyscale-300;
+}
+.sl-bg-default,
+.sl-bg-greyscale-4 {
+  background-color: $--color-greyscale-400;
+}
+.sl-bg-greyscale-5 {
+  background-color: $--color-greyscale-500;
+}
+.sl-bg-greyscale-6 {
+  background-color: $--color-greyscale-600;
+}
+
+/**
+ * Fix pass image size
+ * TODO: wait for support in vue 3.0
+ */
+.img-fluid {
+  img {
+    @include img-fluid;
+  }
+}
+// Width and height
+.mw-100 {
+  img {
+    max-width: 100% !important;
+  }
+}
+.mh-100 {
+  img {
+    max-height: 100% !important;
+  }
+}
+
+// Viewport additional helpers
+.min-vw-100 {
+  img {
+    min-width: 100vw !important;
+  }
+}
+.min-vh-100 {
+  img {
+    min-height: 100vh !important;
+  }
+}
+.vw-100 {
+  img {
+    width: 100vw !important;
+  }
+}
+.vh-100 {
+  img {
+    height: 100vh !important;
+  }
+}
+
+/**
+ * Font Sizing
+ */
+.p-black {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.p-med {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/**
+ * Spacing
+ */
+.space-top-1 {
+  margin-top: rem(24px);
+
+  @include media-breakpoint-up(md) {
+    margin-top: rem(40px);
+  }
+}
+
+.space-bottom-1 {
+  margin-bottom: rem(24px);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: rem(40px);
+  }
+}

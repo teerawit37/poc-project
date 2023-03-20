@@ -1,0 +1,15 @@
+@include block('rule'){
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: white;
+
+    @include element('label'){
+        font-family: 'noto-sans';
+
+        @include modifier('title'){
+            font-family: 'noto-sans';
+            font-weight: 900;
+        }
+    }
+}

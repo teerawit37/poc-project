@@ -1,0 +1,62 @@
+@include block('navbar') {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 15%) 0px 1px 4px;
+    flex: 0 0 auto;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1001;
+    width: 100%;
+    margin: 0px auto;
+    overflow-x: clip;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 56px;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    @include media-breakpoint-up('lg'){
+        padding: 0 1rem;
+        height: 72px;
+    }
+
+    @include element('logo') {
+        width: 100px;
+        height: 100%;
+
+        @include media-breakpoint-up('lg') {
+            width: 150px;
+        }
+    }
+
+    @include element('menu-container') {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: space-between;
+        font-weight: 900;
+    }
+}
+
+@include block('banner-top') {
+    height: 6.4rem;
+    background: linear-gradient(-45deg, $--color-violet-500 40%, $--color-orange-500 60%);
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    right: 0px;
+    top: 56px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: height 0.1s linear 0s;
+    height: 64px;
+    @include media-breakpoint-up('lg'){
+        height: 64px;
+        top: 72px;
+    }
+}

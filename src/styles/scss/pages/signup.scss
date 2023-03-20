@@ -1,0 +1,51 @@
+@include block('signup') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+    background-color: $--color-violet-100;
+
+    @include media-breakpoint-up('lg') {
+        margin-top: 72px;
+    }
+
+    @include element('container') {
+        max-width: 400px;
+        width: 100%;
+    }
+
+
+    @include element('header') {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    @include element('input') {
+        width: 100% !important;
+        height: 56px;
+        // padding: 4px 16px 0 10px;
+        outline: 0;
+        border: 1px solid $--color-greyscale-200;
+        border-radius: 4px;
+        background: #fff;
+        font-size: 16px;
+        font-family: 'noto-sans';
+
+        &:focus {
+            border: 2px solid $--color-violet-400;
+        }
+
+        .ant-select-selector {
+            border: none !important;
+            display: flex !important;
+            align-items: center !important;
+            height: 100% !important;
+            font-size: 16px !important;
+            font-family: 'noto-sans' !important;
+            // color: #999 !important;
+        }
+        .ant-select-item-option-content {
+            font-family: 'noto-sans' !important;
+        }
+    }
+}

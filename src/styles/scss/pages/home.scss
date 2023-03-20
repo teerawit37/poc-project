@@ -1,0 +1,39 @@
+@include block('home') {
+    color: $--color-pearly-white-600;
+
+    @include element('banner') {
+        min-height: 400px;
+        // margin-top: 120px;
+        margin-top: 130px;
+        background-color: $--color-violet-400;
+        width: 100%;
+
+        @include media-breakpoint-up('lg') {
+            // margin-top: 136px;
+            margin-top: 146px;
+        }
+
+        @include modifier('new') {
+            background-color: $--color-orange-400;
+            margin-top: 10px;
+        }
+    }
+
+    @include element('head-container') {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        justify-content: center;
+    }
+
+    @include element('head') {
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+
+        @include media-breakpoint-up('md') {
+            font-size: 40px;
+            font-weight: 600;
+        }
+    }
+}

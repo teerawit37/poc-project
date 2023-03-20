@@ -1,0 +1,70 @@
+@include block('lobby') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'noto-sans';
+
+    @include element('number-list') {
+        padding: 16px;
+        margin-top: 16px;
+        background-color: white;
+        // border-radius: 4px;
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 300px;
+    }
+
+    @include element('title') {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    @include element('shared') {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        min-width: 300px;
+        max-width: 320px;
+        width: 100%;
+    }
+
+    @include element('sub-title') {
+        font-size: 18px;
+
+        @include media-breakpoint-up('lg') {
+            font-size: 22px;
+        }
+    }
+
+    @include element('label') {
+        font-size: 18px;
+        text-align: center;
+        //
+        margin-top: 60px;
+    }
+
+    @include element('sub-label') {
+        font-size: 16px;
+    }
+
+    @include element('head') {
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    @include element('sub-head') {
+        font-size: 24px;
+    }
+
+    @include element('head-container') {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+}

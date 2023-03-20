@@ -1,0 +1,58 @@
+/**
+* Base font family
+*/
+@font-face {
+  font-family: "noto-sans";
+  src: url("/fonts/NotoSansThai/NotoSansThai-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "noto-sans";
+  src: url("/fonts/NotoSansThai/NotoSansThai-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "noto-sans";
+  src: url("/fonts/NotoSansThai/NotoSansThai-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "noto-sans";
+  src: url("/fonts/NotoSansThai/NotoSansThai-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "noto-sans";
+  src: url("/fonts/NotoSansThai/NotoSansThai-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+// /**
+//  * Icons
+//  */
+@font-face {
+  font-family: "sl-icons";
+  src: url("/fonts/sl-icons/sl-icons.eot");
+  src: url("/fonts/sl-icons/sl-icons.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/sl-icons/sl-icons.woff") format("woff"),
+    url("/fonts/sl-icons/sl-icons.ttf") format("truetype"),
+    url("/fonts/sl-icons/sl-icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
