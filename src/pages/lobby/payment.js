@@ -88,7 +88,7 @@ export default function Payment(user) {
                                 </div>
                             </div>
                             <div className='sl-payment__notics mb-4'>กรุณาใช้ชื่อบัญชีเดียวกันกับชื่อจริงในการโอนเงิน</div>
-                            <div className='sl-payment__bank-block mb-6'>
+                            <div className='sl-payment__bank-block mb-4'>
                                 <input type="file" id="myFile" name="filename" />
                                 <Button>ส่งสลิป</Button>
                             </div>
