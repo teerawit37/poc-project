@@ -74,8 +74,9 @@ export default function NumpadV2({ submit }) {
     }
 
     const submitNumber = (name) => {
+        // console.log(name)
         const num = phoneNumber.join('')
-        if (num !== '') {
+        if (num !== '' || options.length !== 0) {
             submit(permuteOptions(options, num, permut), name)
             setPhoneNumber(['', '', ''])
         }
@@ -93,7 +94,6 @@ export default function NumpadV2({ submit }) {
         } else {
             setOptions([...options, selectedOption]);
         }
-        console.log(options)
     }
 
     const handleAddNumber = () => {
@@ -103,7 +103,7 @@ export default function NumpadV2({ submit }) {
                 return
             }
         }
-        submitNumber(session.user.name);
+        submitNumber();
     }
 
     const handleNameChange = (e) => {
