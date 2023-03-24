@@ -179,21 +179,25 @@ export default function NumpadV2({ submit }) {
                         <button className='sl-numpad__num' onClick={handleClick}>1</button>
                         <button className='sl-numpad__num' onClick={handleClick}>2</button>
                         <button className='sl-numpad__num' onClick={handleClick}>3</button>
+                        <button className='sl-numpad__num' onClick={() => handleDelete()}>ลบ</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>4</button>
                         <button className='sl-numpad__num' onClick={handleClick}>5</button>
                         <button className='sl-numpad__num' onClick={handleClick}>6</button>
+                        <button className='sl-numpad__num' onClick={() => setPhoneNumber(['', '', ''])}>ล้าง</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>7</button>
                         <button className='sl-numpad__num' onClick={handleClick}>8</button>
                         <button className='sl-numpad__num' onClick={handleClick}>9</button>
+                        <button className='sl-numpad__num'>กลับเลข</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
-                        <button className='sl-numpad__num' onClick={() => setPhoneNumber(['', '', ''])}>ล้าง</button>
+                        <button className='sl-numpad__num sl-numpad__num--disable'></button>
                         <button className='sl-numpad__num' onClick={handleClick}>0</button>
-                        <button className='sl-numpad__num' onClick={() => handleDelete()}>ลบ</button>
+                        <button className='sl-numpad__num sl-numpad__num--disable'></button>
+                        <button className='sl-numpad__num sl-numpad__num--disable'></button>
                     </div>
                     <div>
 

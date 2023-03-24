@@ -161,8 +161,8 @@ export default function Numpad({ submit }) {
         <div className="sl-numpad">
             <div className="sl-numpad__option-container gap-1">
                 <div className={`sl-numpad__option ${options.includes('บน') && 'sl-numpad__option--active'}`} onClick={() => handleOptionChange('บน')}>บน</div>
-                <div className={`sl-numpad__option ${options.includes('โต๊ด') && 'sl-numpad__option--active'}`} onClick={() => handleOptionChange('โต๊ด')}>โต๊ด</div>
                 <div className={`sl-numpad__option ${options.includes('ล่าง') && 'sl-numpad__option--active'}`} onClick={() => handleOptionChange('ล่าง')}>ล่าง</div>
+                <div className={`sl-numpad__option ${options.includes('โต๊ด') && 'sl-numpad__option--active'}`} onClick={() => handleOptionChange('โต๊ด')}>โต๊ด</div>
             </div>
             <div className="sl-numpad__num-container">
                 <div>
@@ -183,21 +183,25 @@ export default function Numpad({ submit }) {
                         <button className='sl-numpad__num' onClick={handleClick}>1</button>
                         <button className='sl-numpad__num' onClick={handleClick}>2</button>
                         <button className='sl-numpad__num' onClick={handleClick}>3</button>
+                        <button className='sl-numpad__num' onClick={() => handleDelete()}>ลบ</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>4</button>
                         <button className='sl-numpad__num' onClick={handleClick}>5</button>
                         <button className='sl-numpad__num' onClick={handleClick}>6</button>
+                        <button className='sl-numpad__num' onClick={() => setPhoneNumber(['', '', ''])}>ล้าง</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>7</button>
                         <button className='sl-numpad__num' onClick={handleClick}>8</button>
                         <button className='sl-numpad__num' onClick={handleClick}>9</button>
+                        <button className='sl-numpad__num'>3 กลับ</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
-                        <button className='sl-numpad__num' onClick={() => setPhoneNumber(['', '', ''])}>ล้าง</button>
+                        <button className='sl-numpad__num sl-numpad__num--disable'></button>
                         <button className='sl-numpad__num' onClick={handleClick}>0</button>
-                        <button className='sl-numpad__num' onClick={() => handleDelete()}>ลบ</button>
+                        <button className='sl-numpad__num sl-numpad__num--disable'></button>
+                        <button className='sl-numpad__num'>6 กลับ</button>
                     </div>
                     <div>
 
