@@ -179,8 +179,8 @@ export default function FillPrice(user) {
                         {/* <PricePad></PricePad> */}
                         <div className='d-flex justify-content-center'>
                             <div className="sl-fill-price__btn-container">
-                                <Button type={'long'} onClick={letDelAll}>ลบเลขทั้งหมด</Button>
-                                <Button type={'long'}>ใส่เงินเท่ากันทุกเลข</Button>
+                                <Button type="secondary" onClick={letDelAll}>ลบเลขทั้งหมด</Button>
+                                <Button type="secondary" >ใส่เงินเท่ากันทุกเลข</Button>
                             </div>
                         </div>
                     </div>

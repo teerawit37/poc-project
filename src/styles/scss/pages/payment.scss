@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 56px;
-    background-color: $--color-violet-100;
+    background-color: $--color-crayola-blue-100;
 
     @include media-breakpoint-up('lg') {
         margin-top: 72px;
@@ -33,7 +33,7 @@
         max-width: 600px;
         width: 100%;
         min-height: 500px;
-        background-color: $--color-violet-100;
+        background-color: $--color-crayola-blue-100;
 
     }
 
@@ -43,7 +43,7 @@
         display: flex;
         align-items: center;
         color: white;
-        background-color: $--color-violet-500;
+        background-color: $--color-crayola-blue-300;
         justify-content: space-between;
 
         @include media-breakpoint-up('lg') {
@@ -165,23 +165,23 @@
         justify-content: space-between;
         padding: 8px;
         font-size: 18px;
-        color: $--color-violet-600;
+        color: $--color-crayola-blue-600;
         align-items: center;
         // border-bottom: 1px solid $--color-greyscale-200;
     }
 
     @include element('price-label') {
         margin-left: 4px;
-        color: $--color-violet-200;
+        color: $--color-crayola-blue-200;
     }
 
     @include element('price-footer') {
         display: flex;
-        background-color: $--color-orange-200;
+        background-color:$--color-crayola-blue-300;
         justify-content: space-between;
         padding: 8px;
         font-size: 18px;
-        color: $--color-violet-600;
+        color: white;
         align-items: center;
     }
 
@@ -268,14 +268,14 @@
     }
 
     .ant-tabs-tab {
-        background-color: $--color-violet-200 !important;
+        background-color: $--color-crayola-blue-200 !important;
         border: none !important;
         color: $--color-greyscale-500 !important;
     }
 
     .ant-tabs-tab-active {
-        background-color: $--color-violet-100 !important;
-        color: $--color-violet-600 !important;
+        background-color: $--color-crayola-blue-100 !important;
+        color: $--color-crayola-blue-600 !important;
     }
 
     .ant-tabs-nav-wrap {
@@ -291,8 +291,8 @@
     }
 
     .ant-tabs-tab {
-        border: 2px solid $--color-violet-300;
+        border: 2px solid $--color-crayola-blue-300;
         border-bottom: none;
-        background-color: $--color-violet-100;
+        background-color: $--color-crayola-blue-100;
     }
 }

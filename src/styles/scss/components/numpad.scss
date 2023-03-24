@@ -28,8 +28,8 @@
         color: rgb(102, 102, 102);
 
         @include modifier('active') {
-            background-color: $--color-orange-400;
-            color: $--color-violet-500;
+            background-color: $--color-crayola-blue-300;
+            color: white;
         }
     }
 

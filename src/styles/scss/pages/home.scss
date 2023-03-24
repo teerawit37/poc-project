@@ -27,12 +27,12 @@
     }
 
     @include element('head') {
-        font-size: 30px;
+        font-size: 24px;
         font-weight: 600;
         color: white;
 
         @include media-breakpoint-up('md') {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: 600;
         }
     }

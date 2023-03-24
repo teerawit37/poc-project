@@ -29,8 +29,9 @@ export default function Home() {
         <div className='sl-home__banner'>
           <div className='container'>
             <div className='sl-home__head-container'>
-              <div className='sl-home__head'>แทงหวยออนไลน์ได้ง่ายๆ</div>
-              <div className='sl-home__head'>เล่นได้ทุกที่ทุกเวลา</div>
+              <div className='sl-home__head'>ซื้อหวยออนไลน์ง่ายๆ</div>
+              <div className='sl-home__head'>สะดวกปลอดภัย ได้เงินไว</div>
+              <div className='sl-home__head'>ส่วนลดเยอะ ซื้อเลย คลิ๊ก</div>
               <div className='mt-2'>
               <Button onClick={() => handleClick('/lobby/thai')}>เริ่มเล่นหวยออนไลน์</Button>
               </div>
@@ -40,10 +41,12 @@ export default function Home() {
         <div className='sl-home__banner sl-home__banner--new'>
           <div className='container'>
             <div className='sl-home__head-container'>
-              <div className='sl-home__head'>เป็นตัวแทนกับ 911SuperLucky</div>
-              <div className='sl-home__head'>เล่นได้ทุกที่ แทงได้ทุกเวลา รายได้ดี</div>
+              <div className='sl-home__head'>สนใจสมัครตัวแทน ทำงานออนไลน์</div>
+              <div className='sl-home__head'>อยากหารายได้เสริมหรือรายได้หลัก</div>
+              <div className='sl-home__head'>ไม่ต้องใช้เงินลงทุน</div>
+              <div className='sl-home__head'>ดูรายละเอียดเพิ่มเติม คลิ๊ก</div>
               <div className='mt-2'>
-              <Button onClick={() => handleClick('/lobby/thai')}>เริ่มเล่นหวยออนไลน์</Button>
+              <Button onClick={() => handleClick('/lobby/thai')}>สมัครตัวแทน</Button>
               </div>
             </div>
           </div>

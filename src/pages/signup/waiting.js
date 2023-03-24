@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useSession, signOut } from "next-auth/react"
 import { useEffect, useState } from 'react';
+import { CheckCircleOutlined } from '@ant-design/icons';
 import Input from '@/components/Input'
 import { Select, Space } from 'antd';
 import Button from '@/components/Button/Button'
@@ -27,7 +28,9 @@ export default function Waiting() {
     return (
         <div className="sl-waiting">
             <div className="sl-waiting__space">
-                รอ approve
+                <CheckCircleOutlined className='sl-waiting__icon mb-2' />
+                <div>เราได้รับข้อมูลของท่านแล้ว</div>
+                <div>เราจะรีบติดต่อกลับไปให้เร็วที่สุด</div>
             </div>
         </div>
     )

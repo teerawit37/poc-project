@@ -29,7 +29,7 @@
 
         @include modifier('active'){
             background-color: $--color-orange-400;
-            color: $--color-violet-500;
+            color: $--color-crayola-blue-300;
         }
     }
     @include element('box'){
