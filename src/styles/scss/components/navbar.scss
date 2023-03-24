@@ -42,7 +42,7 @@
 
 @include block('banner-top') {
     height: 6.4rem;
-    background: linear-gradient(-45deg, $--color-violet-500 40%, $--color-orange-500 60%);
+    background: linear-gradient(-45deg, $--color-crayola-blue-300 40%, $--color-fade 60%);
     position: fixed;
     z-index: 10;
     left: 0px;

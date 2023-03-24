@@ -7,6 +7,7 @@
     box-shadow: $--box-shadow-3;
     font-size: 16px;
     font-family: 'noto-sans';
+    display: flex;
 
     &:hover {
         color: $--color-line;

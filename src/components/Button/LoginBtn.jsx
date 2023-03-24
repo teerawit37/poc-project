@@ -4,13 +4,14 @@ import Button from './Button';
 import { Dropdown, Space } from 'antd';
 import { useRouter } from 'next/router'
 import AuthService from '../../services/auth.service';
+import LineIcon from './LineIcon'
 
 export default function LoginBtn() {
     const { data: session } = useSession()
     const router = useRouter();
     const url = process.env.NEXT_PUBLIC_WEB_URL + 'signup/verify';
     const urlOut = process.env.NEXT_PUBLIC_WEB_URL + '/';
-    
+
     const handleSignout = () => {
         signOut(null, { callbackUrl: urlOut })
         AuthService.signout();
@@ -57,7 +58,9 @@ export default function LoginBtn() {
     }
     return (
         <>
-            <Button onClick={() => signIn(null, { callbackUrl: url })}>เข้าสู่ระบบ</Button>
+            <Button onClick={() => signIn(null, { callbackUrl: url })}>
+                <LineIcon color="white" className="me-2"></LineIcon>เข้าสู่ระบบ
+            </Button>
         </>
     )
 }
