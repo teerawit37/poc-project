@@ -103,7 +103,7 @@ export default function FillNumber() {
                     <div key={item.customer}>
                         <div className='sl-num-list__name-title mt-2'>{item.customer}</div>
                         {item.num.map((num) => (
-                            <div className='sl-num-list__items row' key={`key-${num.num}-${num.option}`}>
+                            <div className='sl-num-list__items row' key={`key-${num.num}-${item.customer}`}>
                                 <div className='col-3 sl-num-list__item'><CloseCircleFilled onClick={() => removeObjectFromArray(item.customer, num)} /></div>
                                 <div className='col-3 sl-num-list__item'>{num.option}</div>
                                 <div className='col-6 sl-num-list__item'>{num.num}</div>
