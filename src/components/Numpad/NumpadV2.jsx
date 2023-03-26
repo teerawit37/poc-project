@@ -18,6 +18,8 @@ export default function NumpadV2({ submit }) {
     const secondInputRef = useRef(null);
     const thirdInputRef = useRef(null);
 
+    const randomNumber = ['45', '98', '76', '65', '23', '19', '60', '31', '72', '01']
+
     const handleClick = (e) => {
         const number = e.target.innerText;
         if (phoneNumber[0].length < 1) {
@@ -37,6 +39,12 @@ export default function NumpadV2({ submit }) {
             setPhoneNumber(['', '', '']);
             firstInputRef.current.focus();
         }
+    }
+
+    const generateRandomString = () => {
+        const randomIndex = Math.floor(Math.random() * randomNumber.length);
+        const randomString = randomNumber[randomIndex];
+        setPhoneNumber([randomString[0], randomString[1]])
     }
 
     const permuteOptions = (options, number, permute) => {
@@ -82,8 +90,8 @@ export default function NumpadV2({ submit }) {
         }
     }
 
-    const onChange = (e) => {
-        setPermut(e.target.checked);
+    const onChangePermut = () => {
+        setPermut(!permut);
     };
 
     const handleOptionChange = (value) => {
@@ -171,9 +179,10 @@ export default function NumpadV2({ submit }) {
 
                     </div>
                     <div className='d-flex justify-content-end'>
-                        <Checkbox className='sl-numpad__checkbox' checked={permut} onChange={onChange}>
+                        <div className={`sl-numpad__option`} onClick={() => generateRandomString()}>สุ่มเลข</div>
+                        {/* <Checkbox className='sl-numpad__checkbox' checked={permut} onChange={onChange}>
                             กลับเลข
-                        </Checkbox>
+                        </Checkbox> */}
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>1</button>
@@ -191,7 +200,7 @@ export default function NumpadV2({ submit }) {
                         <button className='sl-numpad__num' onClick={handleClick}>7</button>
                         <button className='sl-numpad__num' onClick={handleClick}>8</button>
                         <button className='sl-numpad__num' onClick={handleClick}>9</button>
-                        <button className='sl-numpad__num'>กลับเลข</button>
+                        <button className={`sl-numpad__num ${permut ? 'sl-numpad__num--active' : ''}`} onClick={onChangePermut}>กลับเลข</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num sl-numpad__num--disable'></button>

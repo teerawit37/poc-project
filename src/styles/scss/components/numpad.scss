@@ -78,6 +78,11 @@
         @include modifier('disable'){
             background-color: $--color-greyscale-300
         }
+
+        @include modifier('active'){
+            background-color: $--color-crayola-blue-300;
+            color: white;
+        }
     }
 
     @include element('num-box') {

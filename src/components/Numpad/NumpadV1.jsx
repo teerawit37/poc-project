@@ -14,9 +14,12 @@ export default function Numpad({ submit }) {
     const [phoneNumber, setPhoneNumber] = useState(['', '', '']);
     const [options, setOptions] = useState([]);
     const [permut, setPermut] = useState(false);
+    const [permut3, setPermut3] = useState(false);
     const firstInputRef = useRef(null);
     const secondInputRef = useRef(null);
     const thirdInputRef = useRef(null);
+
+    const randomNumber = ['451', '298', '776', '695', '234', '191', '640', '311', '872', '010']
 
     const handleClick = (e) => {
         const number = e.target.innerText;
@@ -45,13 +48,28 @@ export default function Numpad({ submit }) {
         }
     }
 
-    const permuteOptions = (options, number, permute) => {
+    const generateRandomString = () => {
+        const randomIndex = Math.floor(Math.random() * randomNumber.length);
+        const randomString = randomNumber[randomIndex];
+        setPhoneNumber([randomString[0], randomString[1], randomString[2]])
+    }
+
+    const filterArrayByLastDigits = (arr, lastDigits) => {
+        const n = lastDigits.length;
+        const result = arr.filter(str => str.slice(-n) === lastDigits);
+        return result;
+      }
+
+    const permuteOptions = (options, number, check) => {
         var results = [];
 
         for (var i = 0; i < options.length; i++) {
             var option = options[i];
-            if (permute && option !== 'โต๊ด') {
+            if (check !== '0' && option !== 'โต๊ด') {
                 var permutations = permuteNumber(number);
+                if(check === '3'){
+                    permutations = [permutations[0], permutations[1], permutations[2]]
+                }
                 for (var j = 0; j < permutations.length; j++) {
                     results.push({ num: permutations[j], option: option, money: 5 });
                 }
@@ -81,15 +99,40 @@ export default function Numpad({ submit }) {
 
     const submitNumber = (name) => {
         // console.log(name)
+        let checkPermut;
+        if (permut === true) {
+            checkPermut = '6'
+        } else {
+            if (permut3 === true) {
+                checkPermut = '3'
+            } else {
+                checkPermut = '0'
+            }
+        }
+
         const num = phoneNumber.join('')
         if (num !== '' || options.length !== 0) {
-            submit(permuteOptions(options, num, permut), name)
+            submit(permuteOptions(options, num, checkPermut), name)
             setPhoneNumber(['', '', ''])
         }
     }
 
-    const onChange = (e) => {
-        setPermut(e.target.checked);
+    const onChangePermut6 = () => {
+        if (permut === true) {
+            setPermut(false);
+        } else {
+            setPermut(true);
+            setPermut3(false)
+        }
+    };
+
+    const onChangePermut3 = () => {
+        if (permut3 === true) {
+            setPermut3(false);
+        } else {
+            setPermut3(true);
+            setPermut(false)
+        }
     };
 
     const handleOptionChange = (value) => {
@@ -129,7 +172,7 @@ export default function Numpad({ submit }) {
     }
 
     useEffect(() => {
-        if(customerPick !== ''){
+        if (customerPick !== '') {
             setName('')
         }
     }, [customerPick])
@@ -175,9 +218,10 @@ export default function Numpad({ submit }) {
 
                     </div>
                     <div className='d-flex justify-content-end'>
-                        <Checkbox className='sl-numpad__checkbox' checked={permut} onChange={onChange}>
+                        <div className={`sl-numpad__option`} onClick={() => generateRandomString()}>สุ่มเลข</div>
+                        {/* <Checkbox className='sl-numpad__checkbox' checked={permut} onChange={onChange}>
                             กลับเลข
-                        </Checkbox>
+                        </Checkbox> */}
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num' onClick={handleClick}>1</button>
@@ -195,13 +239,13 @@ export default function Numpad({ submit }) {
                         <button className='sl-numpad__num' onClick={handleClick}>7</button>
                         <button className='sl-numpad__num' onClick={handleClick}>8</button>
                         <button className='sl-numpad__num' onClick={handleClick}>9</button>
-                        <button className='sl-numpad__num'>3 กลับ</button>
+                        <button className={`sl-numpad__num ${permut3 ? 'sl-numpad__num--active' : ''}`} onClick={onChangePermut3}>3 กลับ</button>
                     </div>
                     <div className='d-flex gap-1 my-1'>
                         <button className='sl-numpad__num sl-numpad__num--disable'></button>
                         <button className='sl-numpad__num' onClick={handleClick}>0</button>
                         <button className='sl-numpad__num sl-numpad__num--disable'></button>
-                        <button className='sl-numpad__num'>6 กลับ</button>
+                        <button className={`sl-numpad__num ${permut ? 'sl-numpad__num--active' : ''}`} onClick={onChangePermut6}>6 กลับ</button>
                     </div>
                     <div>
 
