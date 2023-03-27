@@ -10,7 +10,7 @@ import { Radio, Tabs } from 'antd';
 import { useRouter } from 'next/router'
 import cookie from 'cookie';
 import jwt from 'jsonwebtoken';
-import { CaretLeftOutlined, CloseCircleFilled } from '@ant-design/icons';
+import { CaretLeftOutlined, CloseCircleFilled, CopyOutlined } from '@ant-design/icons';
 
 export default function Payment(user) {
     const { data: session } = useSession()
@@ -63,10 +63,17 @@ export default function Payment(user) {
                                             <span className='sl-payment__price-label'>฿</span>
                                         </div>
                                     </div>
+                                    <div className='sl-payment__price-header'>
+                                        <div>ส่วนลด</div>
+                                        <div>
+                                            <span>{totalPrice * 0.05}</span>
+                                            <span className='sl-payment__price-label'>฿</span>
+                                        </div>
+                                    </div>
                                     <div className='sl-payment__price-footer'>
                                         <div>ยอดเงินที่ต้องชำระ</div>
                                         <div>
-                                            <span>{totalPrice}</span>
+                                            <span>{totalPrice - (totalPrice * 0.05)}</span>
                                             <span className='sl-payment__price-label'>฿</span>
                                         </div>
                                     </div>
@@ -79,7 +86,10 @@ export default function Payment(user) {
                                 </div>
                                 <div className='sl-payment__bank-block'>
                                     <div className='sl-payment__bank-label'>เลขบัญชี</div>
-                                    <div className='sl-payment__bank-value-label'>293-237945-8</div>
+                                    <div className='sl-payment__copy' onClick={() => { navigator.clipboard.writeText('2932379458') }}>
+                                        <div className='sl-payment__bank-value-label me-2'>293-237945-8</div>
+                                        <CopyOutlined className="d-flex align-items-center" />
+                                    </div>
                                 </div>
                                 <div className='sl-payment__bank-block'>
                                     <div className='sl-payment__bank-label'>ชื่อบัญชี</div>

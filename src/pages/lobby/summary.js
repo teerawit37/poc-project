@@ -87,10 +87,17 @@ export default function Summary(user) {
                                             <span className='sl-summary__price-label'>฿</span>
                                         </div>
                                     </div>
+                                    <div className='sl-summary__price-header'>
+                                        <div>ส่วนลด</div>
+                                        <div>
+                                            <span>{totalPrice*0.05}</span>
+                                            <span className='sl-payment__price-label'>฿</span>
+                                        </div>
+                                    </div>
                                     <div className='sl-summary__price-footer'>
                                         <div>ยอดเงินที่ต้องชำระ</div>
                                         <div>
-                                            <span>{totalPrice}</span>
+                                            <span>{totalPrice - (totalPrice*0.05)}</span>
                                             <span className='sl-summary__price-label'>฿</span>
                                         </div>
                                     </div>

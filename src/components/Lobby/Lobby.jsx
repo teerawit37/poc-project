@@ -31,8 +31,8 @@ const Lobby = () => {
             {session && (
                 <div className='sl-lobby__shared'>
                     <Input.Group compact>
-                        <Input style={{ width: 'calc(100% - 86px)', height: '42px' }} defaultValue={url + session.user.name} />
-                        <Button type="primary" onClick={() => { navigator.clipboard.writeText(url + session.user.name) }}>Copy</Button>
+                        <Input style={{ width: 'calc(100% - 100px)', height: '42px' }} defaultValue={url + session.user.name} />
+                        <Button type="primary" onClick={() => { navigator.clipboard.writeText(url + session.user.name) }}>คัดลอก</Button>
                     </Input.Group>
                 </div>
             )}
