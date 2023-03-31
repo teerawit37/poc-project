@@ -58,7 +58,7 @@ export default function LoginBtn() {
     }
     return (
         <>
-            <Button onClick={() => signIn(null, { callbackUrl: url })}>
+            <Button onClick={() => router.push('/signin')}>
                 <LineIcon color="white" className="me-2"></LineIcon>เข้าสู่ระบบ
             </Button>
         </>

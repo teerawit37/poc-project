@@ -1,0 +1,42 @@
+@include block('signin') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 56px;
+    background-color: white;
+
+    @include media-breakpoint-up('lg') {
+        margin-top: 72px;
+    }
+    @include element('title') {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    @include element('container') {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+        padding: 40px 0;
+        flex-direction: column;
+        @include media-breakpoint-up('md'){
+            flex-direction: row;
+        }
+    }
+    @include element('block') {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 300px;
+        background-color: $--color-violet-400;
+        box-shadow: $--box-shadow-2;
+        color: white;
+
+        @include modifier('orange'){
+            background-color: $--color-orange-400;
+            color: black;
+        }
+    }
+}
