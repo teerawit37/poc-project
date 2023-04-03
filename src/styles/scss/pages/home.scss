@@ -4,14 +4,14 @@
     @include element('banner') {
         min-height: 400px;
         // margin-top: 120px;
-        margin-top: 130px;
+        // margin-top: 130px;
         background-color: $--color-violet-400;
         width: 100%;
 
-        @include media-breakpoint-up('lg') {
-            // margin-top: 136px;
-            margin-top: 146px;
-        }
+        // @include media-breakpoint-up('lg') {
+        //     // margin-top: 136px;
+        //     margin-top: 146px;
+        // }
 
         @include modifier('new') {
             background-color: $--color-orange-400;

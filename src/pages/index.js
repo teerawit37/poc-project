@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router'
 import BannerTop from '../components/NavBar/BannerTop';
 import Button from '@/components/Button/Button';
+import Lotto from '@/components/Lotto'
 
 export default function Home() {
   const { data: session } = useSession()
@@ -26,12 +27,14 @@ export default function Home() {
       </Head>
       <main className="sl-home">
         <BannerTop></BannerTop>
+        <Lotto></Lotto>
         <div className='sl-home__banner'>
           <div className='container'>
             <div className='sl-home__head-container'>
               <div className='sl-home__head'>ซื้อหวยออนไลน์ง่ายๆ</div>
               <div className='sl-home__head'>สะดวกปลอดภัย ได้เงินไว</div>
               <div className='sl-home__head'>ส่วนลดเยอะ ซื้อเลย คลิ๊ก</div>
+              
               <div className='mt-2'>
               <Button onClick={() => handleClick('/lobby/thai')}>เริ่มเล่นหวยออนไลน์</Button>
               </div>
