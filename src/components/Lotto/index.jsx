@@ -1,7 +1,4 @@
 import React, { useState, useRef } from 'react';
-import Button from '../Button/Button';
-import { FacebookOutlined } from '@ant-design/icons';
-import LineIcon from '../Button/LineIcon'
 export default function Lotto() {
 
     const data = {
@@ -23,7 +20,7 @@ export default function Lotto() {
                             <div className='sl-lotto__text-label'>3 ตัวบน</div>
                             <div className='sl-lotto__num-container'>
                                 {data.top3.map((item) => (
-                                    <div className='sl-lotto__num-label'>{item}</div>
+                                    <div key={`top3-${item}`} className='sl-lotto__num-label'>{item}</div>
                                 ))}
                             </div>
                         </div>
@@ -32,7 +29,7 @@ export default function Lotto() {
                             <div className='sl-lotto__text-label'>โต๊ด</div>
                             <div className='sl-lotto__num-container'>
                                 {data.todd.map((item) => (
-                                    <div className='sl-lotto__num-label'>{item}</div>
+                                    <div key={`todd-${item}`} className='sl-lotto__num-label'>{item}</div>
                                 ))}
                             </div>
                         </div>
@@ -40,7 +37,7 @@ export default function Lotto() {
                             <div className='sl-lotto__text-label'>2 ตัวบน</div>
                             <div className='sl-lotto__num-container'>
                                 {data.top2.map((item) => (
-                                    <div className='sl-lotto__num-label'>{item}</div>
+                                    <div key={`top2-${item}`} className='sl-lotto__num-label'>{item}</div>
                                 ))}
                             </div>
                         </div>
@@ -49,7 +46,7 @@ export default function Lotto() {
                             <div className='sl-lotto__num-container'>
 
                                 {data.bott2.map((item) => (
-                                    <div className='sl-lotto__num-label'>{item}</div>
+                                    <div key={`bott2-${item}`} className='sl-lotto__num-label'>{item}</div>
                                 ))}
                             </div>
                         </div>
@@ -58,7 +55,7 @@ export default function Lotto() {
                             <div className='sl-lotto__num-container'>
 
                                 {data.bott3.map((item) => (
-                                    <div className='sl-lotto__num-label'>{item}</div>
+                                    <div key={`bott3-${item}`} className='sl-lotto__num-label'>{item}</div>
                                 ))}
                             </div>
                         </div>
