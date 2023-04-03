@@ -98,7 +98,7 @@ export default function Numpad({ submit }) {
     }
 
     const submitNumber = (name) => {
-        // console.log(name)
+        console.log(name)
         let checkPermut;
         if (permut === true) {
             checkPermut = '6'
@@ -152,7 +152,7 @@ export default function Numpad({ submit }) {
                 return
             }
         }
-        submitNumber();
+        submitNumber('My Lotto');
     }
 
     const handleNameChange = (e) => {

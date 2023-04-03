@@ -1,0 +1,36 @@
+@include block('drawer') {
+    display: flex;
+    flex-direction: column;
+
+    @include element('profile-image') {
+        width: 70px;
+        height: 70px;
+        // border-radius: 20px;
+        overflow: hidden;
+    }
+
+    @include element('label') {
+        font-size: 24px;
+        color: $--color-greyscale-600;
+        font-family: 'noto-sans';
+        font-weight: 600;
+    }
+
+    @include element('profile-container') {
+        display: flex;
+        flex-direction: column;
+        margin-left: 8px;
+    }
+
+    @include element('item') {
+        font-size: 20px;
+        color: $--color-greyscale-500;
+        font-family: 'noto-sans';
+        border-bottom: 2px solid $--color-greyscale-200;
+        padding: 8px 0px;
+
+        &:hover {
+            color: $--color-crayola-blue-300;
+        }
+    }
+}
