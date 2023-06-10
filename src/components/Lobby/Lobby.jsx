@@ -25,7 +25,7 @@ const Lobby = () => {
         <div className='sl-lobby'>
             <div className='sl-lobby__head-container'>
                 <div className='sl-lobby__sub-head'>งวดวันที่</div>
-                <div className='sl-lobby__head'>1 เมษายน 2566</div>
+                <div className='sl-lobby__head'>1 มิถุนายน 2566</div>
             </div>
             <Button onClick={() => handleClick('/lobby/fill-number')}>เล่นหวยเลย</Button>
             {session && (

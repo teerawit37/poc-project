@@ -1,5 +1,26 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 export default function Lotto() {
+    const [sprints, setSprints] = useState([])
+
+    const fetchSprints = async () => {
+        try {
+          const response = await fetch('http://localhost:8080/api/sprint/all');
+    
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data)
+            setSprints(data);
+          } else {
+            console.log('Error:', response.status);
+          }
+        } catch (error) {
+          console.log('Error:', error);
+        }
+      };
+    
+      useEffect(() => {
+        fetchSprints();
+      }, []);
 
     const data = {
         top3: ['907'],

@@ -17,6 +17,20 @@ export default function Payment(user) {
     const router = useRouter();
     const [number, setNumber] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files?.[0];
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            setSelectedImage(reader.result);
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    };
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.localStorage) {
@@ -66,14 +80,14 @@ export default function Payment(user) {
                                     <div className='sl-payment__price-header'>
                                         <div>ส่วนลด</div>
                                         <div>
-                                            <span>{totalPrice * 0.05}</span>
+                                            <span>{totalPrice * 0.2}</span>
                                             <span className='sl-payment__price-label'>฿</span>
                                         </div>
                                     </div>
                                     <div className='sl-payment__price-footer'>
                                         <div>ยอดเงินที่ต้องชำระ</div>
                                         <div>
-                                            <span>{totalPrice - (totalPrice * 0.05)}</span>
+                                            <span>{totalPrice - (totalPrice * 0.2)}</span>
                                             <span className='sl-payment__price-label'>฿</span>
                                         </div>
                                     </div>
@@ -97,14 +111,16 @@ export default function Payment(user) {
                                 </div>
                             </div>
                             <div className='sl-payment__notics mb-2'>กรุณาใช้ชื่อบัญชีเดียวกันกับชื่อจริงในการโอนเงิน</div>
+                            {selectedImage && <img  className="mt-4 mb-4 w-50 h-50" src={selectedImage} alt="Uploaded" />}
                             <div className='sl-payment__bank-block-new mb-4'>
-                                <input type="file" id="myFile" name="filename" />
+                                {/* <input type="file" id="myFile" name="filename" />  */}
+                                <input type="file" accept="image/*" onChange={handleImageUpload} />
                                 <div className='sl-payment__bank-button'>
-                                    <Button>ส่งสลิป</Button>
+                                    <Button onClick={() => router.push('/')}>ส่งสลิป</Button>
                                 </div>
                             </div>
                         </div>
-
+                     {/* modal แสดงข้อมูลการจ่ายเงินทั้งหมดใน modal รวมถึงอนุมัติการซื้อ ให้เห็นชัดเจน */}
                     </div>
 
                 </div>

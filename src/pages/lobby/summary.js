@@ -6,7 +6,7 @@ import Button from '@/components/Button/Button';
 import PriceList from '@/components/List/PriceList';
 import { useSession, getSession } from "next-auth/react"
 import { useEffect, useState } from 'react';
-import { Radio, Tabs } from 'antd';
+import { Radio, Tabs, Switch } from 'antd';
 import { useRouter } from 'next/router'
 import cookie from 'cookie';
 import jwt from 'jsonwebtoken';
@@ -17,6 +17,7 @@ export default function Summary(user) {
     const router = useRouter();
     const [number, setNumber] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
+    const [discount, setDiscount] = useState(true)
 
     useEffect(() => {
         if (typeof window !== 'undefined' && window.localStorage) {
@@ -31,26 +32,30 @@ export default function Summary(user) {
                         summary += obj.num.reduce((acc, curr) => acc + curr.money, 0);
                     })
                     // const summary = initialValue.reduce((acc, curr) => acc + curr.money, 0);
-                    setTotalPrice(summary)
+                    setTotalPrice(summary - 300)
                 }
             }
         }
     }, [router.pathname])
 
+    const onChangeDiscount = () => {
+        setDiscount(!discount)
+    };
+
     const setupNumber = () => {
-    const data = number.map(({ customer, num }) => ({
-      customer: customer,
-      datetime: new Date().toLocaleString(),
-      num: num.map(({ num, option, money }) => ({
-        number: num,
-        option: option,
-        money: money,
-        reward: money * 5,
-      })),
-    }));
-    // console.log(data);
-    localStorage.setItem("MY-LOTTO-LIST", JSON.stringify(data))
-  }
+        const data = number.map(({ customer, num }) => ({
+            customer: customer,
+            datetime: new Date().toLocaleString(),
+            num: num.map(({ num, option, money }) => ({
+                number: num,
+                option: option,
+                money: money,
+                reward: money * 5,
+            })),
+        }));
+        // console.log(data);
+        localStorage.setItem("MY-LOTTO-LIST", JSON.stringify(data))
+    }
 
     const handleToPay = (path) => {
         if (number.length !== 0) {
@@ -83,24 +88,35 @@ export default function Summary(user) {
                                     <div className='sl-summary__price-header'>
                                         <div>ยอดเล่นหวย</div>
                                         <div>
-                                            <span>{totalPrice}</span>
+                                            <span>{totalPrice + 300}</span>
                                             <span className='sl-summary__price-label'>฿</span>
                                         </div>
                                     </div>
-                                    <div className='sl-summary__price-header'>
-                                        <div>ส่วนลด</div>
-                                        <div>
-                                            <span>{totalPrice*0.05}</span>
-                                            <span className='sl-payment__price-label'>฿</span>
-                                        </div>
-                                    </div>
+                                    {discount &&
+                                        (<div className='sl-summary__price-header'>
+                                            <div>ส่วนลด</div>
+                                            <div>
+                                                <span>{(totalPrice-300) * 0.2}</span>
+                                                <span className='sl-payment__price-label'>฿</span>
+                                            </div>
+                                        </div>)
+                                    }
                                     <div className='sl-summary__price-footer'>
                                         <div>ยอดเงินที่ต้องชำระ</div>
                                         <div>
-                                            <span>{totalPrice - (totalPrice*0.05)}</span>
+                                            {discount ?
+                                                <span>{(totalPrice+300) - ((totalPrice-300) * 0.2)}</span>
+                                                :
+                                                <span>{totalPrice+300}</span>
+                                            }
                                             <span className='sl-summary__price-label'>฿</span>
                                         </div>
                                     </div>
+
+                                </div>
+                                <div className='d-flex align-items-center mt-2'>
+                                    <Switch className='me-1' checked={discount} onChange={onChangeDiscount} />
+                                    <div className="sl-summary__label" >รับส่วนลด</div>
                                 </div>
                             </div>
                             <div className='sl-summary__container'>
@@ -121,13 +137,23 @@ export default function Summary(user) {
                                                         <span>{num.option}</span>
                                                         <span className='sl-summary__label-list--bold'>{num.num}</span>
                                                     </div>
-                                                    <div className='col-3 sl-summary__label-list'>{500}</div>
+                                                    {num.num !== '92' ?
+                                                        <div className='col-3 sl-summary__label-list'>{discount ? 450 : 500}</div>
+                                                        :
+                                                        <div className='col-3 sl-summary__label-list'>{300}</div>
+                                                    }
+                                                    
                                                     <div className='col-3 sl-summary__label-list'>
                                                         <span className='sl-summary__label-list--bold'>{num.money}</span>
                                                         <span className='sl-summary__label-list--non-hl'>฿</span>
                                                     </div>
                                                     <div className='col-3 sl-summary__label-list'>
-                                                        <span className='sl-summary__label-list--hl'>{num.money * 500}</span>
+                                                    {num.num !== '92' ?
+                                                         <span className='sl-summary__label-list--hl'>{num.money * (discount ? 450 : 500)}</span>
+                                                        :
+                                                        <span className='col-3 sl-summary__label-list--hl'>{num.money*300}</span>
+                                                    }
+                                                        {/* <span className='sl-summary__label-list--hl'>{num.money * (discount ? 450 : 500)}</span> */}
                                                         <span className='sl-summary__label-list--non-hl'>฿</span>
                                                     </div>
                                                 </div>

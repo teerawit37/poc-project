@@ -96,7 +96,7 @@ export default function Signup() {
                                 { value: 'tmb', label: 'ทหารไทย' },
                             ]}
                         />
-                        <Input title="เลขบัญชี" value={account} type="text" onChange={handleAccountChange} className="mb-3"></Input>
+                        <Input title="เลขบัญชีธนาคาร" value={account} type="text" onChange={handleAccountChange} className="mb-3"></Input>
                         <Button className="mb-6" type="long" onClick={signupUser} >สมัครสมาชิก</Button>
                     </div>
                 </div>
